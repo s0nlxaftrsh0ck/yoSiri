@@ -7,18 +7,29 @@
 import random
 import os
 
-list = open("./english-words-master/words.txt").read()
-line = list[0:]
 
-words = line.split()
-randoWord = random.choice(words)
+def word():
+    wlist = open("./english-words-master/words.txt").read()
+    wline = wlist[0:]
 
-questionList = open("./english-words-master/phrasing.txt")
+    words = wline.split()
+    randoWord = random.choice(words)
+
+    return randoWord
+
+def question():
+    qlist = open("./english-words-master/phrasing.txt").read()
+    qline = qlist[0:]
+
+    phrasing = qline.split()
+    randoQues = random.choice(phrasing)
+
+    return randoQues
 
 
-print(randoWord)
 
-#word1 = 'where'
-#word2 = 'Carmen San Diego'
 
-#print("Hey Siri " + word1 + " is " + word2 + "?")
+#print(word())
+#print(question())
+
+print("Hey Siri " + question() + " is " + word() + "?")
